@@ -1,10 +1,12 @@
 #!/bin/bash
 
-
 if [ "`whoami`" != "root" ]; then
    echo "You do not have permissions to execute this command"
    exit 255
 fi
+
+apt-get install transmission-daemon
+apt-get install samba
 
 cd `dirname $0`
 
