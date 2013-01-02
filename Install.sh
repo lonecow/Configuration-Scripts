@@ -39,3 +39,5 @@ service smbd resart
 service transmission-daemon restart
 
 createDirectories
+
+./Update_fstab.sh
