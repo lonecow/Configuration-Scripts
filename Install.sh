@@ -41,3 +41,4 @@ service transmission-daemon restart
 createDirectories
 
 ./Update_fstab.sh
+./Update_crontab.sh
