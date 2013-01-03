@@ -1,1 +1,0 @@
-0 3 * * * /home/rbitel/Configuration-Scripts/backup_data.sh > /dev/null

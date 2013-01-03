@@ -10,7 +10,9 @@ SCRIPT_DIR="`dirname @0`"
 DELIMITOR="CRONTAB CONFIGURATION"
 OLD_FILE="`tempfile -p crontab`"
 NEW_FILE="`tempfile -p crontab`"
-EXTENDED_DATA_FILE="$SCRIPT_DIR/crontab"
+EXTENDED_DATA_FILE="`tempfile -p crontab`"
+
+$SCRIPT_DIR/templates/crontab.sh $SCRIPT_DIR > $EXTENDED_DATA_FILE
 
 crontab -u rbitel -l > $OLD_FILE
 
@@ -22,4 +24,5 @@ mv $OLD_FILE /tmp/crontab.bak
 echo "crontab move to /tmp/crontab.bak"
 
 rm -f $NEW_FILE
+rm -f $EXTENDED_DATA_FILE
 exit 0
