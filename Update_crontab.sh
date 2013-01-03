@@ -14,11 +14,11 @@ EXTENDED_DATA_FILE="`tempfile -p crontab`"
 
 $SCRIPT_DIR/templates/crontab.sh $SCRIPT_DIR > $EXTENDED_DATA_FILE
 
-crontab -u rbitel -l > $OLD_FILE
+crontab -u linserve-backup -l > $OLD_FILE
 
 $SCRIPT_DIR/FileReplace.py "$DELIMITOR" $OLD_FILE $NEW_FILE $EXTENDED_DATA_FILE
 
-crontab -u rbitel $NEW_FILE
+crontab -u linserve-backup $NEW_FILE
 
 mv $OLD_FILE /tmp/crontab.bak
 echo "crontab move to /tmp/crontab.bak"

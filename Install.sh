@@ -16,8 +16,22 @@ if [ "`whoami`" != "root" ]; then
    exit 255
 fi
 
+createDirectories
+
+./Create_users.sh
+
+touch /var/log/backup_log.txt
+chown linserve-backup:linserve-users /var/log/backup_log.txt
+
+./Update_fstab.sh
+./Update_crontab.sh
+
 apt-get install transmission-daemon
 apt-get install samba
+
+usermod -a -G linserve-users rbitel
+usermod -a -G transmission-users rbitel
+usermod -g transmission-users debian-transmission
 
 cd `dirname $0`
 
@@ -38,7 +52,3 @@ fi
 service smbd resart
 service transmission-daemon restart
 
-createDirectories
-
-./Update_fstab.sh
-./Update_crontab.sh

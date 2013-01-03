@@ -6,7 +6,7 @@ if [ -z "$CURRENT_DIR" ]; then
 	CURRENT_DIR='pwd'
 fi
 
-BACKUP_LOG="$CURRENT_DIR/backup_log.txt"
+BACKUP_LOG="/var/log/backup_log.txt"
 
 #first we are going to check if both the data and external mounts exist
 DATA_MOUNTED="FALSE"
@@ -25,7 +25,7 @@ if [ ${DATA_MOUNTED} = "TRUE" -a ${EXTERNAL_MOUNTED} ]
 then
 	echo "[`date`] Backup Started" >> $BACKUP_LOG
 	echo "Starting Bakup"
-	rsync -azv --exclude="lost+found" /mnt/data/ /mnt/external/bkup >> $BACKUP_LOG
+	rsync -azv --exclude="lost+found" /mnt/data/ /mnt/external/bkup &>> $BACKUP_LOG
 	echo "Done"
 	echo "[`date`] Backup Complete" >> $BACKUP_LOG
 fi
