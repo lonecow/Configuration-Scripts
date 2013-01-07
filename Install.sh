@@ -26,6 +26,8 @@ chown linserve-backup:linserve-users /var/log/backup_log.txt
 ./Update_fstab.sh
 ./Update_crontab.sh
 
+sudo mount -a
+
 apt-get install transmission-daemon
 apt-get install samba
 
