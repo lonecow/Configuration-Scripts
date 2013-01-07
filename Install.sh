@@ -52,5 +52,6 @@ else
 fi
 
 service smbd resart
+service nmbd resart
 service transmission-daemon restart
 
