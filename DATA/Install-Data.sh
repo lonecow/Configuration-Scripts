@@ -24,3 +24,10 @@ addgroup --system transmission-users
 
 sudo mount -a
 
+#update file groupings
+chgrp linserve-users -R /mnt/data
+chgrp linserve-users -R /mnt/external
+chgrp linserve-users -R /mnt/external2
+chgrp transmission-users -R /mnt/data/PartialDownloads
+chgrp transmission-users -R /mnt/data/Downloads
+

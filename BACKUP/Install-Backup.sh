@@ -14,4 +14,7 @@ usermod -a -G linserve-users linserve-backup
 touch /var/log/backup_log.txt
 chown linserve-backup:linserve-users /var/log/backup_log.txt
 
+chown linserve-backup -R /mnt/external
+
 `dirname $0`/Update_crontab.sh
+
