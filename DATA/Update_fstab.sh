@@ -14,7 +14,7 @@ EXTENDED_DATA_FILE="`tempfile -p fstab`"
 
 $SCRIPT_DIR/templates/fstab.sh > $EXTENDED_DATA_FILE
 
-$SCRIPT_DIR/FileReplace.py "$DELIMITOR" $OLD_FILE $NEW_FILE $EXTENDED_DATA_FILE
+$SCRIPT_DIR/../FileReplace.py "$DELIMITOR" $OLD_FILE $NEW_FILE $EXTENDED_DATA_FILE
 
 mv $OLD_FILE /tmp/fstab.bak
 echo "fstab move to /tmp/fstab.bak"
