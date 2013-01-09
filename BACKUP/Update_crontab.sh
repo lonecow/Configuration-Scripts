@@ -5,7 +5,7 @@ if [ "`whoami`" != "root" ];then
    exit 255
 fi
 
-SCRIPT_DIR="`dirname @0`"
+SCRIPT_DIR="`dirname $0`"
 
 DELIMITOR="CRONTAB CONFIGURATION"
 OLD_FILE="`tempfile -p crontab`"
@@ -16,7 +16,7 @@ $SCRIPT_DIR/templates/crontab.sh $SCRIPT_DIR > $EXTENDED_DATA_FILE
 
 crontab -u linserve-backup -l > $OLD_FILE
 
-$SCRIPT_DIR/FileReplace.py "$DELIMITOR" $OLD_FILE $NEW_FILE $EXTENDED_DATA_FILE
+$SCRIPT_DIR/../FileReplace.py "$DELIMITOR" $OLD_FILE $NEW_FILE $EXTENDED_DATA_FILE
 
 crontab -u linserve-backup $NEW_FILE
 

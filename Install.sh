@@ -7,18 +7,11 @@ fi
 
 #this must be done first!
 ./DATA/Install-Data.sh
-./Create_users.sh
-
-touch /var/log/backup_log.txt
-chown linserve-backup:linserve-users /var/log/backup_log.txt
-
-./Update_crontab.sh
 
 usermod -a -G linserve-users rbitel
 usermod -a -G transmission-users rbitel
 
-service transmission-daemon restart
-
+./BACKUP/Install-Backup.sh
 ./SAMBA/Install-Samba.sh
 ./XBMC/Install-XBMC-Server.sh
 ./TRANSMISSION/Install-Transmission.sh

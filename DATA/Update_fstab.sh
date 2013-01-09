@@ -5,7 +5,7 @@ if [ "`whoami`" != "root" ];then
    exit 255
 fi
 
-SCRIPT_DIR="`dirname @0`"
+SCRIPT_DIR="`dirname $0`"
 
 DELIMITOR="FSTAB CONFIGURATION"
 OLD_FILE="/etc/fstab"
