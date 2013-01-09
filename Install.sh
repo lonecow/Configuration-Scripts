@@ -28,7 +28,6 @@ chown linserve-backup:linserve-users /var/log/backup_log.txt
 sudo mount -a
 
 apt-get install transmission-daemon
-apt-get install samba
 
 usermod -a -G linserve-users rbitel
 usermod -a -G transmission-users rbitel
@@ -43,22 +42,7 @@ else
    exit 255
 fi
 
-if [ -d /etc/samba/ ]; then
-  cp -v ./samba/* /etc/samba/
-else
-   echo "samba doesnt seem to exist"
-   exit 255
-fi
-
-service smbd restart
-service nmbd restart
-service smbd stop
-service nmbd stop
-
-./RestoreSambaDb.sh
-
-service smbd start
-service nmbd start
 service transmission-daemon restart
 
+./SAMBA/Install-Samba.sh
 ./XBMC/Install-XBMC-Server.sh
