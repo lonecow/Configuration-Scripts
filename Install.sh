@@ -51,7 +51,10 @@ else
    exit 255
 fi
 
-service smbd resart
-service nmbd resart
+service smbd stop
+service nmbd stop
+
+service smbd start
+service nmbd start
 service transmission-daemon restart
 
