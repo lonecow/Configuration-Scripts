@@ -61,3 +61,4 @@ service smbd start
 service nmbd start
 service transmission-daemon restart
 
+./XBMC/Install-XBMC-Server.sh
