@@ -1,0 +1,68 @@
+{
+key(21) = "minimum password age\00"
+data(4) = "\00\00\00\00"
+}
+{
+key(31) = "refuse machine password change\00"
+data(4) = "\00\00\00\00"
+}
+{
+key(20) = "reset count minutes\00"
+data(4) = "\1E\00\00\00"
+}
+{
+key(18) = "PRIV_S-1-5-32-550\00"
+data(8) = "\00\00\00\00\00\00\00\00"
+}
+{
+key(18) = "PRIV_S-1-5-32-548\00"
+data(8) = "\00\00\00\00\00\00\00\00"
+}
+{
+key(18) = "PRIV_S-1-5-32-551\00"
+data(8) = "\00\00\00\00\00\00\00\00"
+}
+{
+key(18) = "PRIV_S-1-5-32-549\00"
+data(8) = "\00\00\00\00\00\00\00\00"
+}
+{
+key(16) = "disconnect time\00"
+data(4) = "\FF\FF\FF\FF"
+}
+{
+key(35) = "user must logon to change password\00"
+data(4) = "\00\00\00\00"
+}
+{
+key(17) = "password history\00"
+data(4) = "\00\00\00\00"
+}
+{
+key(17) = "lockout duration\00"
+data(4) = "\1E\00\00\00"
+}
+{
+key(20) = "min password length\00"
+data(4) = "\05\00\00\00"
+}
+{
+key(18) = "PRIV_S-1-5-32-544\00"
+data(8) = "\F0\FF\FF\1F\00\00\00\00"
+}
+{
+key(13) = "PRIV_S-1-1-0\00"
+data(8) = "\00\00\00\00\00\00\00\00"
+}
+{
+key(21) = "maximum password age\00"
+data(4) = "\FF\FF\FF\FF"
+}
+{
+key(20) = "bad lockout attempt\00"
+data(4) = "\00\00\00\00"
+}
+{
+key(13) = "INFO/version\00"
+data(4) = "\03\00\00\00"
+}

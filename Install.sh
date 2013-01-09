@@ -10,7 +10,6 @@ createDirectories()
    done
 }
 
-
 if [ "`whoami`" != "root" ]; then
    echo "You do not have permissions to execute this command"
    exit 255
@@ -51,8 +50,12 @@ else
    exit 255
 fi
 
+service smbd restart
+service nmbd restart
 service smbd stop
 service nmbd stop
+
+./RestoreSambaDb.sh
 
 service smbd start
 service nmbd start
