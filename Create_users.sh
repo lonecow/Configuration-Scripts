@@ -10,6 +10,6 @@ addgroup --system --gid 999 linserve-users
 addgroup --system --gid 998 transmission-users
 useradd --system --shell /bin/false --uid 999 -g linserve-backup linserve-backup
 usermod -a -G transmission-users linserve-backup
-usermod -a -G linserve-backup linserve-backup
+usermod -a -G linserve-users linserve-backup
 
 exit 0
