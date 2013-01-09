@@ -27,22 +27,11 @@ chown linserve-backup:linserve-users /var/log/backup_log.txt
 
 sudo mount -a
 
-apt-get install transmission-daemon
-
 usermod -a -G linserve-users rbitel
 usermod -a -G transmission-users rbitel
-usermod -g transmission-users debian-transmission
-
-cd `dirname $0`
-
-if [ -d /etc/transmission-daemon ]; then
-   cp -v ./transmission/* /etc/transmission-daemon/
-else
-   echo "Transmission-daemon doesnt seem to exist"
-   exit 255
-fi
 
 service transmission-daemon restart
 
 ./SAMBA/Install-Samba.sh
 ./XBMC/Install-XBMC-Server.sh
+./TRANSMISSION/Install-Transmission.sh
