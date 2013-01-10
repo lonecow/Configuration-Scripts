@@ -17,8 +17,7 @@ else
    exit 255
 fi
 
-chown debian-transmission /mnt/data/Downloads
-chown debian-transmission /mnt/data/PartialDownloads
+`dirname $0`/UpdateFilePermissions.sh
 
 service transmission-daemon restart
 
