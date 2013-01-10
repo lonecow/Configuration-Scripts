@@ -6,12 +6,12 @@ if [ "`whoami`" != "root" ]; then
 fi
 
 #this must be done first!
-./DATA/Install-Data.sh
+`dirname $0`/DATA/Install-Data.sh
 
 usermod -a -G linserve-users rbitel
 usermod -a -G transmission-users rbitel
 
-./BACKUP/Install-Backup.sh
-./SAMBA/Install-Samba.sh
-./XBMC/Install-XBMC-Server.sh
-./TRANSMISSION/Install-Transmission.sh
+`dirname $0`/BACKUP/Install-Backup.sh
+`dirname $0`/SAMBA/Install-Samba.sh
+`dirname $0`/XBMC/Install-XBMC-Server.sh
+`dirname $0`/TRANSMISSION/Install-Transmission.sh
