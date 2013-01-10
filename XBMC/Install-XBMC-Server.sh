@@ -15,6 +15,6 @@ else
 fi
 
 mysql -u root -p mysql < `dirname $0`/mysql-dbs/mysql.db
+`dirname $0`/RestoreDatabases.sh
 
 service mysql restart
-
