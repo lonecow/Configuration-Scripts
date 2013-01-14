@@ -12,6 +12,7 @@ groupdel debian-transmission
 
 if [ -d /etc/transmission-daemon ]; then
    cp -v `dirname $0`/transmission/* /etc/transmission-daemon/
+   chown debian-transmission:transmission-users -R /etc/transmission-daemon
 else
    echo "Transmission-daemon doesnt seem to exist"
    exit 255
