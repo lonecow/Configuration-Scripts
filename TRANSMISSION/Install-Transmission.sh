@@ -10,6 +10,8 @@ apt-get install transmission-daemon
 usermod -g transmission-users debian-transmission
 groupdel debian-transmission
 
+service transmission-daemon stop
+
 if [ -d /etc/transmission-daemon ]; then
    cp -v `dirname $0`/transmission/* /etc/transmission-daemon/
    chown debian-transmission:transmission-users -R /etc/transmission-daemon
@@ -20,5 +22,5 @@ fi
 
 `dirname $0`/UpdateFilePermissions.sh
 
-service transmission-daemon restart
+service transmission-daemon start
 
