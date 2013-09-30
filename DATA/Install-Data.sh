@@ -2,7 +2,7 @@
 
 createDirectories()
 {
-   directories="/mnt/data /mnt/external /mnt/external2"
+   directories="/mnt/data /mnt/external /mnt/external2 /mnt/MythTV"
    for directory in $directories; do
       if [ ! -d $directory ]; then
          mkdir -p $directory
@@ -28,6 +28,7 @@ sudo mount -a
 chgrp linserve-users -R /mnt/data
 chgrp linserve-users -R /mnt/external
 chgrp linserve-users -R /mnt/external2
+chgrp linserve-users -R /mnt/MythTV
 chgrp transmission-users -R /mnt/data/PartialDownloads
 chgrp transmission-users -R /mnt/data/Downloads
 
